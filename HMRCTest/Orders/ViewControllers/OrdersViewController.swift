@@ -26,8 +26,10 @@ class OrdersViewController: BaseViewController {
     
     
     func getOrders() {
+        self.showLoadingAnimation()
         viewModels.getOrders { [weak self] error in
             guard let strongSelf = self else { return }
+            strongSelf.hideLottieAnimation()
             if let error = error {
                 strongSelf.showCustomAlert(title: error.title ?? "", message: error.message ?? "", doneButtonTitle: "Ok")
             } else {

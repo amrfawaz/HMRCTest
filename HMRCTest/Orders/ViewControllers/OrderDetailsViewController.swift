@@ -39,7 +39,7 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
         let orderCell = tableView.dequeueReusableCell(withIdentifier: String(describing: OrderCell.self)) as? OrderCell
         
         orderCell?.labelTitle.text = "ID: \(orders?[indexPath.row].id ?? "N/A")"
-        orderCell?.accessoryType = .disclosureIndicator
+        orderCell?.accessoryType = .none
         return orderCell!
     }
 }
